@@ -14,6 +14,7 @@ const express = require("express");
 const app = express();
 
 // Import router
+const clothingItemsRouter = require("./routes/clothingItems.js");
 
 // Middleware
 
@@ -22,6 +23,7 @@ const app = express();
 app.get("/", (req, res) => {
     res.send("hello world");
 });
+app.use("/clothingItems", clothingItemsRouter);
 
 // Listen on port
 app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
