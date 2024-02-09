@@ -4,36 +4,29 @@ const express = require('express')
 // Create a router
 const router = express.Router()
 
+// Import the ClothingItem controller
+const clothingItemCtrl = require("../controllers/clothingItem");
+
 // ROUTES
 
 // Index (all clothing items)
 // GET /clothingItems
-router.get("/", async (req, res) => {
-	res.status(200).json({message: "clothing items index route"})
-});
+router.get("/", clothingItemCtrl.index);
 
 // Create
 // POST /clothingItems
-router.post("/", async (req, res) =>  {
-	res.status(201).json({message: "clothing items create route"})
-});
+router.post("/", clothingItemCtrl.create);
 
 // Show (one clothing item)
 // GET /clothingItems/:id
-router.get("/:id", async (req, res) => {
-    res.status(200).json({message: "clothing items show route"})
-});
+router.get("/:id", clothingItemCtrl.show);
 
 // Update
 // PUT /clothingItems/:id
-router.put("/:id", async (req, res) => {
-    res.status(200).json({message: "clothing items update route"})
-});
+router.put("/:id", clothingItemCtrl.update);
 
 // Delete
 // DELETE /clothingItems/:id
-router.delete("/:id", async (req, res) => {
-    res.status(200).json({message: "clothing items delete route"})
-});
+router.delete("/:id", clothingItemCtrl.destroy);
 
 module.exports = router
