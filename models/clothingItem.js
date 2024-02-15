@@ -46,7 +46,10 @@ const ClothingItemSchema = new Schema({
         type: String,
         default: 'Unspecified',
     },
-    image: { type: String },
+    image: { 
+        type: String,
+        default: "",
+    },
     quantity: {
         type: Number,
         default: 1,
