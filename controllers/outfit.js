@@ -19,7 +19,7 @@ const create = async (req, res) => {
 
 const show = async (req, res) => {
     try {
-        res.json(await Outfit.findById(req.params.id));
+        res.json(await Outfit.findById(req.params.id)).populate('clothingItems');
     } catch (error) {
         res.status(400).json(error);
     }
