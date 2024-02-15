@@ -14,6 +14,10 @@ const OutfitSchema = new Schema({
         }],
         default: [],
     },
+    name: {
+        type: String,
+        required: true,
+    },
     weather: {
         type: String,
         default: 'Unspecified',
