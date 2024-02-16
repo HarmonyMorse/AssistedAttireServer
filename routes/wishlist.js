@@ -11,22 +11,22 @@ const wishlistCtrl = require("../controllers/wishlist");
 
 // Index (all wishlist items)
 // GET /wishlist
-router.get("/", wishlistItemCtrl.index);
+router.get("/", wishlistCtrl.index);
 
 // Create
 // POST /wishlist
-router.post("/", wishlistItemCtrl.create);
+router.post("/", wishlistCtrl.create);
 
 // Show (one wishlist item)
 // GET /wishlist/:id
-router.get("/:id", wishlistItemCtrl.show);
+router.get("/:id", wishlistCtrl.show);
 
 // Update
 // PUT /wishlist/:id
-router.put("/:id", wishlistItemCtrl.update);
+router.put("/:id", wishlistCtrl.update);
 
 // Delete
 // DELETE /wishlist/:id
-router.delete("/:id", wishlistItemCtrl.destroy);
+router.delete("/:id", wishlistCtrl.destroy);
 
 module.exports = router
